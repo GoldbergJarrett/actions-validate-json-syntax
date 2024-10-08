@@ -21,7 +21,7 @@ This action expects that the repo has been checked out.
 ...
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 ...
 ```
 
