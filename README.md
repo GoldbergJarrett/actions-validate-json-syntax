@@ -4,7 +4,7 @@ GitHub Action for validating json syntax.
 
 [JSON Documentation.](https://www.json.org/json-en.html)
 
-This is a simple tool that utilizes a powerful tool, JQ to do simple syntax validation on JSON.
+This is a simple tool that utilizes a powerful tool, JQ, to do simple syntax validation on JSON.
 
 ## Usage
 
