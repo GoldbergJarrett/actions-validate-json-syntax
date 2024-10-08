@@ -1,0 +1,33 @@
+name: 'Validate JSON Files'
+description: 'GitHub Action for validating JSON files.'
+branding:
+  icon: 'file-text'
+  color: 'blue'
+inputs:
+  path:
+    description: 'The path to search for JSON files.'
+    required: true
+    default: './'
+runs:
+  using: "composite"
+  steps:
+    - name: Validate JSON Files
+      run: |
+          JSON_FILES=$(find "$INPUT_PATH" -type f -name '*.json')
+
+          if [ -z "$JSON_FILES" ]; then
+            echo "No JSON files found in XDTMS_*/conf/*.json directories."
+            exit 0
+          fi
+
+          for file in $JSON_FILES; do
+            echo "Validating $file..."
+
+            if ! jq empty "$file"; then
+              echo "Invalid JSON in $file"
+              exit 1
+            fi
+          done
+      shell: bash
+      env:
+        INPUT_PATH: ${{ inputs.path }}
