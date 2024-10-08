@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Validate JSON Syntax
         uses: GoldbergJarett/actions-validate-json-syntax@v1
