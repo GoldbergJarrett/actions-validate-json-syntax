@@ -16,7 +16,7 @@ runs:
           JSON_FILES=$(find "$INPUT_PATH" -type f -name '*.json')
 
           if [ -z "$JSON_FILES" ]; then
-            echo "No JSON files found in XDTMS_*/conf/*.json directories."
+            echo "No JSON files found in $INPUT_PATH."
             exit 0
           fi
 
